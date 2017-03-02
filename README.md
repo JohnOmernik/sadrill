@@ -30,14 +30,13 @@ We need to outline that drillpy and pydrill projects both provided insight into 
 
 
 ### Install
+
 Simply install superset via presribed methods, then on the same host, docker container, or virtual environment:
 
-```
-git clone https://github.com/JohnOmernik/sadrill
+```git clone https://github.com/JohnOmernik/sadrill
 cd sadrill
 python3 setup.py install
-cd ..
-```
+cd ..```
 
 Now you should be able to use the sadrill package with superset!
 
