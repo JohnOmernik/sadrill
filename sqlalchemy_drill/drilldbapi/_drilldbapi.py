@@ -204,6 +204,7 @@ class Cursor(object):
                 pass
             myresults = self._resultSet[index : index + fetch_size]
             if len(myresults.index) > 0:
+                print("List Index: " + str(len(myresults.index)))
                 return [tuple(x) for x in myresults.to_records(index=False)]
             else:
                 return []
