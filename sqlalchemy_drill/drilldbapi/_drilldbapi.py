@@ -203,10 +203,11 @@ class Cursor(object):
             except StopIteration:
                 pass
             myresults = self._resultSet[index : index + fetch_size]
-            if self.rowcount  > 0:
+            try:
                 return [tuple(x) for x in myresults.to_records(index=False)]
-            else:
-                return []
+            except:
+                print("Error on return, likely no results")
+                return None
             #return self._resultSet[index : index + fetch_size]
         except StopIteration:
             return None
