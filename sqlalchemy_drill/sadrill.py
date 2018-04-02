@@ -44,6 +44,7 @@ _type_map = {
     'DATE': types.DATE,
     'decimal': types.DECIMAL,
     'double': types.FLOAT,
+    'FLOAT': types.FLOAT,
     'integer': types.INTEGER,
     'interval': types.Interval,
     'smallint': types.SMALLINT,
