@@ -185,6 +185,25 @@ class DrillDialect_sadrill(default.DefaultDialect):
             result.append(column)
         return(result)
 
+    def get_table_columns(self, connection, table_name, schema=None, **kw):
+        q = "DESCRIBE %(table_id)s" % ({"table_id": table_name})
+        cursor = connection.execute(q)
+
+        result = []
+        for col in cursor:
+            cname = col[0]
+            ctype = _type_map[col[1]]
+            bisnull = True
+            column = {
+                "name": cname,
+                "type": ctype,
+                "default": None,
+                "autoincrement": None,
+                "nullable": bisnull,
+            }
+            result.append(column)
+        return(result)
+
     def get_columns(self, connection, table_name, schema=None, **kw):
 
 
