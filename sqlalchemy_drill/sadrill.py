@@ -154,7 +154,8 @@ class DrillDialect_sadrill(default.DefaultDialect):
 
     def has_table(self, connection, table_name, schema=None):
         try:
-            self._get_table_columns(connection, table_name, schema)
+#            self._get_table_columns(connection, table_name, schema)
+            self.get_table_columns(connection, table_name, schema)
             return True
         except exc.NoSuchTableError:
             return False
